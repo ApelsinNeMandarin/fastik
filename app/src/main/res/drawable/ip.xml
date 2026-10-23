@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="31dp"
+    android:viewportWidth="48"
+    android:viewportHeight="31">
+    <!-- Рамка со скруглёнными углами -->
+    <path
+        android:pathData="M6.1,1.6H41.9A4.5,4.5 0 0,1 46.4,6.1V24.9A4.5,4.5 0 0,1 41.9,29.4H6.1A4.5,4.5 0 0,1 1.6,24.9V6.1A4.5,4.5 0 0,1 6.1,1.6Z"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="3.2"
+        android:strokeLineJoin="round" />
+    <!-- Два кружка -->
+    <path
+        android:pathData="M8.5,15.5a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0M19,15.5a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2" />
+    <!-- Чёрточка -->
+    <path
+        android:pathData="M33,19H38.2"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2.6"
+        android:strokeLineCap="round" />
+</vector>

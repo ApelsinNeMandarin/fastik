@@ -1,4 +1,4 @@
-package com.khti.fastikvpn.di
+package com.example.fastik8.di
 
 import android.content.Context
 import androidx.datastore.core.DataStore

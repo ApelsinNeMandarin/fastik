@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.khti.fastikvpn"
+    namespace = "com.example.fastik8"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.khti.fastikvpn"
+        applicationId = "com.example.fastik8"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

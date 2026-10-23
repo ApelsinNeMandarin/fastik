@@ -5,35 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.res.stringResource
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.fastik8.core.constants.Dimens
 import com.example.fastik8.core.model.ThemeMode
-import com.example.fastik8.core.theme.FastikTheme
 import com.example.fastik8.core.theme.FastikVpnTheme
+import com.example.fastik8.ui.mainscreen.MainScreen
 import com.example.fastik8.ui.mainscreen.MainViewModel
-import com.khti.fastikvpn.R
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -41,7 +25,6 @@ class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         val splashScreen = installSplashScreen()
 
         super.onCreate(savedInstanceState)
@@ -57,63 +40,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ThemeCheck(onThemeSelected = viewModel::onThemeSelected)
+                    MainScreen(onThemeSelected = viewModel::onThemeSelected)
                 }
             }
         }
     }
 }
-
-@Composable
-private fun ThemeCheck(onThemeSelected: (ThemeMode) -> Unit) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(Dimens.ScreenPadding),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = stringResource(R.string.app_name),
-            style = MaterialTheme.typography.headlineMedium,
-            color = FastikTheme.colors.title
-        )
-
-        Box(
-            modifier = Modifier
-                .padding(Dimens.SpacingXl)
-                .size(Dimens.FirstCircle)
-                .clip(CircleShape)
-                .background(
-                    Brush.linearGradient(
-                        listOf(
-                            FastikTheme.colors.connectGradientStart,
-                            FastikTheme.colors.connectGradientEnd
-                        )
-                    )
-                )
-        )
-
-        Text(
-            text = stringResource(R.string.theme_title),
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.onBackground
-        )
-
-        Row(
-            modifier = Modifier.padding(top = Dimens.SpacingM),
-            horizontalArrangement = Arrangement.spacedBy(Dimens.SpacingS)
-        ) {
-            Button(onClick = { onThemeSelected(ThemeMode.DARK) }) {
-                Text(stringResource(R.string.theme_dark))
-            }
-            Button(onClick = { onThemeSelected(ThemeMode.LIGHT) }) {
-                Text(stringResource(R.string.theme_light))
-            }
-            Button(onClick = { onThemeSelected(ThemeMode.SYSTEM) }) {
-                Text(stringResource(R.string.theme_system))
-            }
-        }
-    }
-}
-

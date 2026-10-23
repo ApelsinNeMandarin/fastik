@@ -1,6 +1,8 @@
 package com.example.fastik8.di
 
+import com.example.fastik8.data.repository.IpRepositoryImpl
 import com.example.fastik8.data.repository.SettingsRepositoryImpl
+import com.example.fastik8.domain.repository.IpRepository
 import com.example.fastik8.domain.repository.SettingsRepository
 import dagger.Binds
 import dagger.Module
@@ -17,4 +19,10 @@ abstract class RepositoryModule {
     abstract fun bindSettingsRepository(
         impl: SettingsRepositoryImpl
     ): SettingsRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindIpRepository(
+        impl: IpRepositoryImpl
+    ): IpRepository
 }
