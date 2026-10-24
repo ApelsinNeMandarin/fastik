@@ -10,8 +10,8 @@ val BgMainLight = Color(0xFFF4F6FC)  // основной фон
 val BgMenuLight = Color(0xFFE3E7F2)  // нижнее меню, карточки, поля
 
 // --- Акценты, общие для обеих тем ---
-val BgButton = Color(0xFFFF8123)         // кнопка «Войти», активная иконка меню в светлой теме
-val TitlePurple = Color(0xFFF5F7FF)      // больше не используется (заголовок теперь берёт TextWhite/TextBlack)
+val BgButton = Color(0xFFFF8123)
+val TitlePurple = Color(0xFFF5F7FF)
 val CircleGradientStart = Color(0xFFF97F2A) // кнопка подключения: верх градиента
 val CircleGradientEnd = Color(0xFFDC6818)   // кнопка подключения: низ градиента
 val CircleSecond = Color(0xFFF97F2A)     // второй круг свечения
