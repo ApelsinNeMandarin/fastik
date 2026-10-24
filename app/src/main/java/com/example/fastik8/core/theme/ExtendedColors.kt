@@ -21,6 +21,8 @@ data class ExtendedColors(
     // Иконки нижнего меню
     val navIconActive: Color,
     val navIconInactive: Color,
+    // Оранжевые иконки внутри карточек (например, иконка IP) и обводка таймера
+    val accentIcon: Color,
     // Цвет ошибок
     val error: Color
 )
@@ -31,13 +33,14 @@ val DarkExtendedColors = ExtendedColors(
     connectGradientEnd = CircleGradientEnd,
     connectRingSecond = CircleSecond,
     connectRingThird = CircleThird,
-    title = TitlePurple,
+    title = TextWhite,
     accentButton = BgButton,
     onAccentButton = TextWhite,
     disabledContainer = DisabledDark,
     disabledContent = InactiveIconDark,
-    navIconActive = CircleGradientStart,
+    navIconActive = NavIconActiveDark,
     navIconInactive = InactiveIconDark,
+    accentIcon = CircleGradientStart,
     error = ErrorRed
 )
 
@@ -47,13 +50,14 @@ val LightExtendedColors = ExtendedColors(
     connectGradientEnd = CircleGradientEnd,
     connectRingSecond = CircleSecond,
     connectRingThird = CircleThird,
-    title = TitlePurple,
+    title = TextBlack,
     accentButton = BgButton,
     onAccentButton = TextWhite,
     disabledContainer = DisabledLight,
     disabledContent = InactiveIconLight,
     navIconActive = BgButton,
     navIconInactive = InactiveIconLight,
+    accentIcon = BgButton,
     error = ErrorRed
 )
 
